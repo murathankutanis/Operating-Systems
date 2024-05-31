@@ -1,0 +1,4 @@
+Item	Filename		First Block		File Size(bytes)
+0		small.pdf      	   1			100070
+1		big.pdf        	 197			1057485
+2		smallest.pdf   	2263			62188

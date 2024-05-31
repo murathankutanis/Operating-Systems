@@ -1,0 +1,73 @@
+ubuntu@ubuntu:~/Desktop$ gcc -o myfs myfs.c 
+ubuntu@ubuntu:~/Desktop$ ./myfs disk.image -format
+Disk formatted
+ubuntu@ubuntu:~/Desktop$ ./myfs disk.image -list
+No files on disk
+ubuntu@ubuntu:~/Desktop$ ./myfs disk.image -write untitled.pdf small.pdf
+File: small.pdf written to disk
+ubuntu@ubuntu:~/Desktop$ ./myfs disk.image -write EE442_2023_PA3.pdf big.pdf
+File: big.pdf written to disk
+ubuntu@ubuntu:~/Desktop$ ./myfs disk.image -list
+Filename	Size
+small.pdf      	100070
+big.pdf        	1057485
+ubuntu@ubuntu:~/Desktop$ ./myfs disk.image -write Web Browser - hw5-2.pdf middle.pdf
+Error: Invalid number of arguments for -write
+ubuntu@ubuntu:~/Desktop$ ./myfs disk.image -write deneme.pdf middle.pdf
+File: middle.pdf written to disk
+ubuntu@ubuntu:~/Desktop$ ./myfs disk.image -list
+Filename	Size
+small.pdf      	100070
+big.pdf        	1057485
+middle.pdf     	62188
+ubuntu@ubuntu:~/Desktop$ ./myfs disk.image -rename middle.pdf smallest.pdf
+The name of the file middle.pdf is changed to smallest.pdf 
+ubuntu@ubuntu:~/Desktop$ ./myfs disk.image -list
+Filename	Size
+small.pdf      	100070
+big.pdf        	1057485
+smallest.pdf   	62188
+ubuntu@ubuntu:~/Desktop$ ./myfs disk.image -duplicate small.pdf
+ubuntu@ubuntu:~/Desktop$ ./myfs disk.image -list
+Filename	Size
+small.pdf      	100070
+big.pdf        	1057485
+smallest.pdf   	62188
+small.pdf_copy 	100070
+ubuntu@ubuntu:~/Desktop$ ./myfs disk.image -sorta
+Filename	Size
+smallest.pdf   	62188
+small.pdf      	100070
+small.pdf_copy 	100070
+big.pdf        	1057485
+ubuntu@ubuntu:~/Desktop$ ./myfs disk.image -delete small.pdf_copy
+File deleted: small.pdf_copy
+ubuntu@ubuntu:~/Desktop$ ./myfs disk.image -list
+Filename	Size
+small.pdf      	100070
+big.pdf        	1057485
+smallest.pdf   	62188
+ubuntu@ubuntu:~/Desktop$ ./myfs disk.image -hide smallest.pdf
+File: smallest.pdf is hided successfully 
+ubuntu@ubuntu:~/Desktop$ ./myfs disk.image -list
+Filename	Size
+small.pdf      	100070
+big.pdf        	1057485
+ubuntu@ubuntu:~/Desktop$ ./myfs disk.image -unhide smallest.pdf
+File: smallest.pdf is unhided successfully 
+ubuntu@ubuntu:~/Desktop$ ./myfs disk.image -list
+Filename	Size
+small.pdf      	100070
+big.pdf        	1057485
+smallest.pdf   	62188
+ubuntu@ubuntu:~/Desktop$ ./myfs disk.image -printfilelist
+File: filelist.txt is created successfully 
+ubuntu@ubuntu:~/Desktop$ ./myfs disk.image -printfat
+File: fat.txt is created successfully 
+ubuntu@ubuntu:~/Desktop$ ./myfs disk.image -defragment
+Defragmenting...
+Number of files: 3
+1 197 2263 
+Defragmentation complete
+ubuntu@ubuntu:~/Desktop$ ./myfs disk.image -printfat
+File: fat.txt is created successfully 
