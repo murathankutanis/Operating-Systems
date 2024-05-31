@@ -1,0 +1,27 @@
+ubuntu@ubuntu:~/Desktop/EE442/HW1$ ./prime
+GENERATION_RATE: 100
+Thread ID: 281472940765472, Number: 23 is a prime number.
+Thread ID: 281472940765472, Number: 28 is not a prime number. Divisors: 1 2 4 7 14 28
+Thread ID: 281472932311328, Number: 34 is not a prime number. Divisors: 1 2 17 34
+Thread ID: 281472923857184, Number: 88 is not a prime number. Divisors: 1 2 4 8 11 22 44 88
+Thread ID: 281472940765472, Number: 22 is not a prime number. Divisors: 1 2 11 22
+Thread ID: 281472932311328, Number: 75 is not a prime number. Divisors: 1 3 5 15 25 75
+Thread ID: 281472923857184, Number: 29 is a prime number.
+Thread ID: 281472940765472, Number: 11 is a prime number.
+Thread ID: 281472932311328, Number: 64 is not a prime number. Divisors: 1 2 4 8 16 32 64
+Thread ID: 281472923857184, Number: 46 is not a prime number. Divisors: 1 2 23 46
+ubuntu@ubuntu:~/Desktop/EE442/HW1$ ./prime -t 8 -r 5 -n 1000
+GENERATION_RATE: 100
+Thread ID: 281473378283808, Number: 953 is a prime number.
+Thread ID: 281473369829664, Number: 782 is not a prime number. Divisors: 1 2 17 23 34 46 391 782
+Thread ID: 281473378283808, Number: 940 is not a prime number. Divisors: 1 2 4 5 10 20 47 94 188 235 470 940
+Thread ID: 281473352921376, Number: 194 is not a prime number. Divisors: 1 2 97 194
+Thread ID: 281473344467232, Number: 424 is not a prime number. Divisors: 1 2 4 8 53 106 212 424
+ubuntu@ubuntu:~/Desktop/EE442/HW1$ ./prime -t 2 -r 5 -n 100
+GENERATION_RATE: 100
+Thread ID: 281473574826272, Number: 2 is a prime number.
+Thread ID: 281473566372128, Number: 31 is a prime number.
+Thread ID: 281473566372128, Number: 85 is not a prime number. Divisors: 1 5 17 85
+Thread ID: 281473574826272, Number: 43 is a prime number.
+Thread ID: 281473566372128, Number: 72 is not a prime number. Divisors: 1 2 3 4 6 8 9 12 18 24 36 72
+
