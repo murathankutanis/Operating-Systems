@@ -1,0 +1,124 @@
+ubuntu@ubuntu:~/Desktop/EE442/HW2$ ./scheduler
+Input: 
+TID	CPU1	CPU2	IO1	IO2
+T0	7	6	3	2	
+T1	1	3	3	2	
+T2	2	2	8	1	
+T3	3	5	5	2	
+T4	4	3	4	2	
+T5	5	7	1	2	
+T6	6	8	3	2	
+
+Total Tickets: 102
+
+TID	Bursts	State	Tickets	CPU1	IO1	CPU2	IO2
+T0	0	1	18/102	7	3	6	2	
+T1	0	1	9/102	1	3	3	2	
+T2	0	1	13/102	2	8	2	1	
+T3	0	1	15/102	3	5	5	2	
+T4	0	1	13/102	4	4	3	2	
+T5	0	1	15/102	5	1	7	2	
+T6	0	1	19/102	6	3	8	2	
+
+
+T0	T1	T2	T3	T4	T5	T6
+running>T2	ready>T0,T1,T3,T4,T5,T6   	finished>                     		IO>
+		1
+		0
+running>T0	ready>T1,T3,T4,T5,T6      	finished>                     		IO>T2 
+6
+5
+4
+running>T3	ready>T0,T1,T4,T5,T6      	finished>                     		IO>T2 
+			2
+			1
+			0
+running>T4	ready>T0,T1,T5,T6         	finished>                     		IO>T2 T3 
+				3
+				2
+				1
+running>T6	ready>T0,T1,T2,T4,T5      	finished>                     		IO>T3 
+						5
+						4
+						3
+running>T6	ready>T0,T1,T2,T4,T5      	finished>                     		IO>T3 
+						2
+						1
+						0
+running>T0	ready>T1,T2,T3,T4,T5      	finished>                     		IO>T6 
+3
+2
+1
+running>T4	ready>T0,T1,T2,T3,T5,T6   	finished>                     		IO>
+				0
+running>T2	ready>T0,T1,T3,T5,T6      	finished>                     		IO>T4 
+		1
+		0
+running>T3	ready>T0,T1,T5,T6         	finished>                     		IO>T2 T4 
+			4
+			3
+			2
+running>T5	ready>T0,T1,T3,T6         	finished>T2                  		IO>T4 
+					4
+					3
+					2
+running>T3	ready>T0,T1,T4,T5,T6      	finished>T2                  		IO>
+			1
+			0
+running>T5	ready>T0,T1,T4,T6         	finished>T2                  		IO>T3 
+					1
+					0
+running>T4	ready>T0,T1,T6            	finished>T2,T3               		IO>T5 
+				2
+				1
+				0
+running>T5	ready>T0,T1,T6            	finished>T2,T3               		IO>T4 
+					6
+					5
+					4
+running>T5	ready>T0,T1,T6            	finished>T2,T3,T4            		IO>
+					3
+					2
+					1
+running>T5	ready>T0,T1,T6            	finished>T2,T3,T4            		IO>
+					0
+running>T6	ready>T0,T1               	finished>T2,T3,T4            		IO>T5 
+						7
+						6
+						5
+running>T6	ready>T0,T1               	finished>T2,T3,T4,T5         		IO>
+						4
+						3
+						2
+running>T6	ready>T0,T1               	finished>T2,T3,T4,T5         		IO>
+						1
+						0
+running>T0	ready>T1                  	finished>T2,T3,T4,T5         		IO>T6 
+0
+running>T1	ready>                     	finished>T2,T3,T4,T5         		IO>T0 T6 
+	0
+running>T0	ready>                     	finished>T2,T3,T4,T5         		IO>T1 T6 
+5
+4
+3
+running>T0	ready>T1                  	finished>T2,T3,T4,T5,T6      		IO>
+2
+1
+0
+running>T1	ready>                     	finished>T2,T3,T4,T5,T6      		IO>T0 
+	2
+	1
+	0
+running>	ready>                     	finished>T0,T1,T2,T3,T4,T5,T6		IO>
+Turnaround time for Thread 0: 23
+Turnaround time for Thread 1: 14
+Turnaround time for Thread 2: 22
+Turnaround time for Thread 3: 22
+Turnaround time for Thread 4: 19
+Turnaround time for Thread 5: 18
+Turnaround time for Thread 6: 24
+
+
+Processor Utilization: 71.83%
+Average Turnaround Time: 20.29
+
